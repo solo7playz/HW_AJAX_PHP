@@ -41,11 +41,11 @@
                 if (data.exists) {
                     statusSpan.innerHTML = "✖ Логин занят!";
                     statusSpan.className = "error";
-                    btn.disabled = true; // Блокируем кнопку
+                    btn.disabled = true; 
                 } else {
                     statusSpan.innerHTML = "✔ Свободен";
                     statusSpan.className = "success";
-                    btn.disabled = false; // Разблокируем
+                    btn.disabled = false; 
                 }
             });
     }
