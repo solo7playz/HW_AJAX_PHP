@@ -1,5 +1,4 @@
 <?php
-// Подключение к БД (используем ранее созданную логику)
 $pdo = new PDO("mysql:host=localhost;dbname=my_site;charset=utf8", "root", "");
 $countries = $pdo->query("SELECT * FROM Countries")->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -20,7 +19,6 @@ $countries = $pdo->query("SELECT * FROM Countries")->fetchAll(PDO::FETCH_ASSOC);
     </select>
 
     <div id="citiesTableContainer" style="margin-top: 20px;">
-        <!-- Сюда AJAX подставит таблицу -->
     </div>
 
     <script>
@@ -30,7 +28,6 @@ $countries = $pdo->query("SELECT * FROM Countries")->fetchAll(PDO::FETCH_ASSOC);
             return;
         }
 
-        // Используем современный Fetch API вместо старого XMLHttpRequest
         fetch('get_cities.php?countryid=' + countryId)
             .then(response => response.text())
             .then(data => {
